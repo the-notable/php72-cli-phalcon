@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
     git \
     zlib1g-dev \
     unzip \
+    libpq-dev \
 
     && cd ~ \
     && git clone --depth=1 --branch "v3.4.1" "git://github.com/phalcon/cphalcon.git" \
@@ -21,6 +22,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install redis \
 
     && docker-php-ext-install -j$(nproc) pdo_mysql \
+    && docker-php-ext-install -j$(nproc) pdo_pgsql \
     && docker-php-ext-install -j$(nproc) zip \
 
     && apt-get remove -y --purge \
