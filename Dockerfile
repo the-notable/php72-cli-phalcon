@@ -33,4 +33,4 @@ RUN apt-get update && apt-get install -y \
         gcc \
     && apt-get clean
 
-COPY php.ini /usr/local/etc/php/
+# COPY php.ini /usr/local/etc/php/
